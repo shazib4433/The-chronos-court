@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE CHRONOS COURT</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="terminal-header">
+<h1>The Chronos Court</h1>
+<p>SYSTEM STATUS: <span class="status-glow" id="status-text">WAITING...</span></p>
+</div>
+<div id="game-container">
+<div id="menu-overlay">
+<h2 style="margin-bottom: 20px;">SELECT TIMELINE</h2>
+<button class="difficulty-btn" onclick="startGame('easy')">EASY (STABLE)</button>
+<button class="difficulty-btn" onclick="startGame('medium')">MEDIUM (WARPED)</button>
+<button class="difficulty-btn" onclick="startGame('hard')">HARD (CHAOTIC)</button>
+</div>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+</div>
+<div class="interface-footer">
+<div class="control-node"><span class="label">MOVE:</span> [W/S] or [SCROLL]</div>
+<div class="control-node"><span class="label">RESTART:</span> [REFRESH]</div>
+</div>
+<script src="js/game.js"></script>
+</body>
+</html>
+ 
