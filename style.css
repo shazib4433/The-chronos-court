@@ -8,68 +8,61 @@ body {
    align-items: center;
    justify-content: center;
    height: 100vh;
-   padding: 10px;
+   width: 100vw;
    overflow: hidden;
+   padding: 10px;
 }
-.terminal-header { text-align: center; margin-bottom: 8px; }
-h1 { font-size: 1.8rem; letter-spacing: 4px; text-transform: uppercase; }
+.terminal-header { text-align: center; margin-bottom: 1vh; }
+h1 { font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase; }
 .status-glow { color: #00e5ff; text-shadow: 0 0 10px #00e5ff; }
-/* THE FIX: Container shrinks to fit the canvas exactly */
 #game-container {
    position: relative;
-   background: #1a1410;
-   border: 6px solid #8b5a2b;
-   border-radius: 4px;
-   box-shadow: 0 0 30px rgba(0, 0, 0, 1);
-   width: fit-content;
-   max-width: 95vw;
-   max-height: 70vh;
-   margin: 0 auto;
+   border: 4px solid #8b5a2b;
+   background: #000;
+   max-height: 65vh;
+   aspect-ratio: 8 / 6;
    display: flex;
-   overflow: hidden;
 }
-canvas {
-   display: block;
-   width: auto;
-   height: auto;
-   max-width: 100%;
-   max-height: 70vh;
-   background-color: #000;
-}
-/* Menu Overlay Styling */
-#menu-overlay {
+canvas { display: block; height: 100%; width: auto; cursor: none; }
+#menu-overlay, #pause-overlay {
    position: absolute;
    top: 0; left: 0;
    width: 100%; height: 100%;
-   background: rgba(13, 10, 8, 0.95);
+   background: rgba(13, 10, 8, 0.9);
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
    z-index: 10;
 }
-.difficulty-btn {
-   background: transparent;
+/* UNIVERSAL BUTTON STYLING */
+.glow-btn {
+   background: #1a1410;
    border: 2px solid #8b5a2b;
    color: #d4af37;
-   padding: 12px;
+   padding: 12px 24px;
    margin: 8px;
    font-family: inherit;
-   font-size: 1.1rem;
+   font-weight: bold;
    cursor: pointer;
    width: 250px;
-   transition: 0.3s;
+   transition: all 0.3s ease;
+   text-transform: uppercase;
 }
-.difficulty-btn:hover {
-   background: #8b5a2b;
-   color: #0d0a08;
-   box-shadow: 0 0 15px #d4af37;
+/* Hover Effect for Menu & Resume (Cyan) */
+.glow-btn:hover {
+   border-color: #00e5ff;
+   color: #00e5ff;
+   box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+   background: rgba(0, 229, 255, 0.05);
 }
-.interface-footer {
-   margin-top: 15px;
-   display: flex;
-   justify-content: center;
-   gap: 30px;
+/* Action Bar Specifics */
+.action-bar { margin-top: 2vh; display: flex; gap: 20px; }
+/* Restart Button Hover (Orange/Red) */
+.restart-glow:hover {
+   border-color: #ff5722;
+   color: #ff5722;
+   box-shadow: 0 0 20px rgba(255, 87, 34, 0.6);
+   background: rgba(255, 87, 34, 0.05);
 }
-.control-node { font-size: 1.1rem; color: #8b5a2b; text-transform: uppercase; }
-.label { color: #d4af37; font-weight: bold; margin-right: 5px; }
+.interface-footer { margin-top: 1vh; opacity: 0.6; font-size: 0.8rem; }

@@ -14,17 +14,24 @@
 <div id="game-container">
 <div id="menu-overlay">
 <h2 style="margin-bottom: 20px;">SELECT TIMELINE</h2>
-<button class="difficulty-btn" onclick="startGame('easy')">EASY (STABLE)</button>
-<button class="difficulty-btn" onclick="startGame('medium')">MEDIUM (WARPED)</button>
-<button class="difficulty-btn" onclick="startGame('hard')">HARD (CHAOTIC)</button>
+<button class="glow-btn" onclick="startGame('easy')">EASY (STABLE)</button>
+<button class="glow-btn" onclick="startGame('medium')">MEDIUM (WARPED)</button>
+<button class="glow-btn" onclick="startGame('hard')">HARD (CHAOTIC)</button>
+</div>
+<div id="pause-overlay" style="display: none;">
+<h2 style="color: #00e5ff; margin-bottom: 20px;">SYSTEM PAUSED</h2>
+<button class="glow-btn" onclick="togglePause()">RESUME GAME</button>
+<button class="glow-btn" onclick="resetGame()">QUIT TO MENU</button>
 </div>
 <canvas id="gameCanvas" width="800" height="600"></canvas>
 </div>
+<div class="action-bar">
+<button class="glow-btn" onclick="togglePause()">PAUSE SYSTEM</button>
+<button class="glow-btn restart-glow" onclick="resetGame()">RESTART COURT</button>
+</div>
 <div class="interface-footer">
-<div class="control-node"><span class="label">MOVE:</span> [W/S] or [SCROLL]</div>
-<div class="control-node"><span class="label">RESTART:</span> [REFRESH]</div>
+<div class="control-node"><span class="label">PADDLE:</span> MOUSE MOVE / SCROLL</div>
 </div>
 <script src="game.js"></script>
 </body>
 </html>
- 
